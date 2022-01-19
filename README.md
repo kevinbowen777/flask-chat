@@ -1,1 +1,3 @@
-# flask_demo
+## flask_demo - A Social Blogging Application
+
+---
