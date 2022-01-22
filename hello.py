@@ -14,19 +14,6 @@ from threading import Thread
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'this is not the real secret key'
-app.config['SQLALCHEMY_DATABASE_URI'] =\
-    'sqlite:///' + os.path.join(basedir, 'data.sqlite')
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
-app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
-app.config['FLASK_MAIL_SUBJECT_PREFIX'] = '[Flask Demo]'
-app.config['FLASK_MAIL_SENDER'] = 'Flask Demo Admin <kevin.bowen@gmail.com>'
-app.config['FLASK_ADMIN'] = os.environ.get('FLASK_ADMIN')
-
 bootstrap = Bootstrap(app)
 moment = Moment(app)
 db = SQLAlchemy(app)
