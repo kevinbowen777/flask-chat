@@ -1,7 +1,7 @@
 # added 20220114
-# from: https://github.com/github/gitignore
 #
-#
+*.sqlite
+data.sqlite
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
