@@ -1,6 +1,7 @@
 # added 20220114
 #
 *.sqlite
+data-dev.sqlite
 data.sqlite
 # Byte-compiled / optimized / DLL files
 __pycache__/
