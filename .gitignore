@@ -3,7 +3,6 @@
 *.sqlite
 data-dev.sqlite
 data.sqlite
-migrations/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
