@@ -24,6 +24,7 @@
       <p>
           Member since {{ moment(user.member_since).format('L') }}.
           Last seen {{ moment(user.last_seen).fromNow() }}
+      <p>{{ user.posts.count() }} blog posts. </p>
       </p>
          <p>
          {% if user == current_user %}
@@ -35,4 +36,5 @@
       </p>
     </div>
 </div>
+{% include '_posts.html' %}
 {% endblock %}
