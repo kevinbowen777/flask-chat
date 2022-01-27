@@ -65,7 +65,7 @@ class Role(db.Model):
 
     def has_permission(self, perm):
         return self.permissions & perm == perm
- 
+
     def __repr__(self):
         return '<Role %r>' % self.name
 
@@ -204,13 +204,13 @@ class User(UserMixin, db.Model):
 
     def follow(self, user):
         if not self.is_following(user):
-            f = Follow(followed=user)
-            self.followed.append(f)
+            f = Follow(follower=self, followed=user)
+            db.session.add(f)
 
     def unfollow(self, user):
         f = self.followed.filter_by(followed_id=user.id).first()
         if f:
-            self.followed.remove(f)
+            db.session.delete(f)
 
     def is_following(self, user):
         if user.id is None:
@@ -223,6 +223,11 @@ class User(UserMixin, db.Model):
             return False
         return self.followers.filter_by(
             follower_id=user.id).first() is not None
+
+    @property
+    def followed_posts(self):
+        return Post.query.join(Follow, Follow.followed_id == Post.author_id)\
+            .filter(Follow.follower_id == self.id)
 
     def __repr__(self):
         return '<User %r>' % self.username
@@ -259,5 +264,6 @@ class Post(db.Model):
         target.body_html = bleach.linkify(bleach.clean(
             markdown(value, output_format='html'),
             tags=allowed_tags, strip=True))
+
 
 db.event.listen(Post.body, 'set', Post.on_changed_body)
