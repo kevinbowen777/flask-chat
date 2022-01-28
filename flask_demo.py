@@ -26,7 +26,7 @@ def make_shell_context():
 @click.option('--coverage/--no-coverage', default=False,
               help='Run tests under code coverage.')
 @click.argument('test_names', nargs=-1)
-def test(coverage):
+def test(coverage, test_names):
     """Run the unit tests."""
     if coverage and not os.environ.get('FLASK_COVERAGE'):
         import subprocess
