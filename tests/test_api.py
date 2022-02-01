@@ -55,7 +55,7 @@ class APITestCase(unittest.TestCase):
         # add a user
         r = Role.query.filter_by(name='User').first()
         self.assertIsNotNone(r)
-        u = User(emaiil='john@example.com', password='cat', confirmed=True,
+        u = User(email='john@example.com', password='cat', confirmed=True,
                  role=r)
         db.session.add(u)
         db.session.commit()
@@ -64,7 +64,7 @@ class APITestCase(unittest.TestCase):
         response = self.client.get(
             '/api/v1/posts/',
             headers=self.get_api_headers('bad-token', ''))
-        self.assertEqual(respponse.status_code, 401)
+        self.assertEqual(response.status_code, 401)
 
         # get a token
         response = self.client.post(
@@ -102,3 +102,80 @@ class APITestCase(unittest.TestCase):
             headers=self.get_api_headers('john@example.com', 'cat'))
         self.assertEqual(response.status_code, 403)
 
+    def test_posts(self):
+        # add a user
+        r = Role.query.filter_by(name='User').first()
+        self.assertIsNotNone(r)
+        u = User(email='john@example.com', password='cat', confirmed=True,
+                 role=r)
+        db.session.add(u)
+        db.session.commit()
+
+        # write an empty post
+        response = self.client.post(
+            '/api/v1/posts/',
+            headers=self.get_api_headers('john@example.com', 'cat'),
+            data=json.dumps({'body': ''}))
+        self.assertEqual(response.status_code, 400)
+
+        # write a post
+        response = self.client.post(
+            '/api/v1/posts/',
+            headers=self.get_api_headers('john@example.com', 'cat'),
+            data=json.dumps({'body': 'body of the *blog* post'}))
+        self.assertEqual(response.status_code, 201)
+        url = response.headers.get('Location')
+        self.assertIsNotNone(url)
+
+        # get the new post
+        response = self.client.get(
+            url,
+            headers=self.get_api_headers('john@example.com', 'cat'))
+        self.assertEqual(response.status_code, 200)
+        json_response = json.loads(response.get_data(as_text=True))
+        self.assertEqual('http://localhost' + json_response['url'], url)
+        self.assertEqual(json_response['body'], 'body of the *blog* post')
+        self.assertEqual(json_response['body_html'],
+                        '<p>body of the <em>blog</em> post</p>')
+        json_post = json_response
+
+        # get the post from the user
+        response = self.client.get(
+            '/api/v1/users/{}/posts/'.format(u.id),
+            headers=self.get_api_headers('john@example.com', 'cat'))
+        self.assertEqual(response.status_code, 200)
+        json_response = json.loads(response.get_data(as_text=True))
+        self.assertIsNotNone(json_response.get('posts'))
+        self.assertEqual(json_response.get('count', 0), 1)
+        self.assertEqual(json_response['posts'][0], json_post)
+
+        # get the post from the user as a follower
+        response = self.client.get(
+            '/api/v1/users/{}/timeline/'.format(u.id),
+            headers=self.get_api_headers('john@example.com', 'cat'))
+        self.assertEqual(response.status_code, 200)
+        json_response = json.loads(response.get_data(as_text=True))
+        self.assertIsNotNone(json_response.get('posts'))
+        self.assertEqual(json_response.get('count', 0), 1)
+        self.assertEqual(json_response['posts'][0], json_post)
+
+        # get the post from the user as a follower
+        response = self.client.get(
+            '/api/v1/users/{}/timeline/'.format(u.id),
+            headers=self.get_api_headers('john@example.com', 'cat'))
+        self.assertEqual(response.status_code, 200)
+        json_response = json.loads(response.get_data(as_text=True))
+        self.assertIsNotNone(json_response.get('posts'))
+        self.assertEqual(json_response.get('count', 0), 1)
+        self.assertEqual(json_response['posts'][0], json_post)
+
+        # edit post
+        response = self.client.put(
+            url,
+            headers=self.get_api_headers('john@example.com', 'cat'),
+            data=json.dumps({'body': 'updated body'}))
+        self.assertEqual(response.status_code, 200)
+        json_response = json.loads(response.get_data(as_text=True))
+        self.assertEqual('http://localhost' + json_response['url'], url)
+        self.assertEqual(json_response['body'], 'updated body')
+        self.assertEqual(json_response['body_html'], '<p>updated body</p>')
