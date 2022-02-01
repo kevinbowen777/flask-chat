@@ -77,6 +77,10 @@ class SeleniumTestCase(unittest.TestCase):
         pass
 
     def test_admin_home_page(self):
+        """
+        On newer versions of flask, tests here will fail:
+            see: https://github.com/pallets/flask/issues/2776
+        """
         # navigate to home page
         self.client.get('http://localhost:5000/')
         self.assertTrue(re.search('Hello,\s+Stranger!',
