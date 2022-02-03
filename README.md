@@ -11,3 +11,9 @@ repository](https://github.com/miguelgrinberg/flasky).
 
 
 ---
+[![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/kevinbowen777/flask_chat/-/blob/master/LICENSE)
+---
+### Reporting Bugs                                                              
+                                                                                 
+   Visit the [Issues page](https://github.com/kevinbowen777/flask_chat/issues)
+      to view currently open bug reports or open a new issue.
