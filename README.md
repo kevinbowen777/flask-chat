@@ -15,8 +15,9 @@ repository](https://github.com/miguelgrinberg/flasky).
  - gravatar support for user icons
  - basic API support for viewing/creating posts or comments
 
-### Live Demo on Heroku: [Flask Chat](https://flask-chat-blog.herokuapp.com/)
-
+### Live Demo on Heroku: [https://flask-chat-blog.herokuapp.com/](https://flask-chat-blog.herokuapp.com/)
+### Docker Container Image:
+[https://hub.docker.com/repository/docker/kevinbowen777/flask_chat](https://hub.docker.com/repository/docker/kevinbowen777/flask_chat)
 ---
 
 ![Flask Chat Homepage](https://github.com/kevinbowen777/flask_chat/blob/master/images/flask_chat_home_20220202.png?raw=true)
