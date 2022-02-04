@@ -1,7 +1,7 @@
 #!/bin/sh
 source venv/bin/activate
 
-while true: do
+while true; do
     flask deploy
     if [[ "$?" == "0" ]]; then
         break
