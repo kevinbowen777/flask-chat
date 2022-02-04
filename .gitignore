@@ -1,5 +1,6 @@
 # added 20220114
 #
+.env*
 *.sqlite
 data-dev.sqlite
 data.sqlite
