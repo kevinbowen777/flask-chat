@@ -6,7 +6,9 @@ Development](http://www.flaskbook.com/) and his [Flasky
 repository](https://github.com/miguelgrinberg/flasky).
 
 
+### Live Demo on Heroku: [Flask Chat](https://flask-chat-blog.herokuapp.com/)
 ---
+
 ![Flask Chat Homepage](https://github.com/kevinbowen777/flask_chat/blob/master/images/flask_chat_home_20220202.png?raw=true)
 
 
