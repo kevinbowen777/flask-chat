@@ -6,7 +6,17 @@ Development](http://www.flaskbook.com/) and his [Flasky
 repository](https://github.com/miguelgrinberg/flasky).
 
 
+---
+## Features
+ - email verification for account registration & password/email change
+ - MarkDown support and preview for comments & posts
+ - ability to follow specific users
+ - filter posts by followed users
+ - gravatar support for user icons
+ - basic API support for viewing/creating posts or comments
+
 ### Live Demo on Heroku: [Flask Chat](https://flask-chat-blog.herokuapp.com/)
+
 ---
 
 ![Flask Chat Homepage](https://github.com/kevinbowen777/flask_chat/blob/master/images/flask_chat_home_20220202.png?raw=true)
