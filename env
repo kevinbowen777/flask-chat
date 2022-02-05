@@ -1,0 +1,17 @@
+# Remember to rename to .env
+# and uncomment the appropriate FLASK_CONFIG statement
+# depending upon the deployment environment
+FLASK_APP=flask_chat.py
+FLASK_CONFIG=development
+#FLASK_CONFIG=testing
+#FLASK_CONFIG=production
+#FLASK_CONFIG=heroku
+#FLASK_CONFIG=docker
+#FLASK_CONFIG=unix
+# python -c "import uuid; print(uuid.uuid4().hex)"
+# to generate secret key
+SECRET_KEY=<secret-key>
+MAIL_USERNAME=<email_username>
+MAIL_PASSWORD=<email_password>
+FLASK_ADMIN=<admin_email_address>
+DATABASE_URL=mysql+pymysql://flask_chat:<database-password>@dbserver/flask_chat
