@@ -23,6 +23,13 @@ repository](https://github.com/miguelgrinberg/flasky).
  - `flask deploy`
  - `flask run` Optionally, run `flask profile` to enable performance profiling
  - Open browser to http://127.0.0.1:5000
+
+ Adding fake users for testing:
+ - `flask shell`
+ - `@>>> from app import fake`
+ - `@>>> fake.users(100)`
+ - `@>>> fake.posts(500)`
+
 #### Local Docker installation:
  - `cp env .env` Fill out & uncomment environmental variables as appropriate
  - Run db server:
