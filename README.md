@@ -29,9 +29,9 @@ repository](https://github.com/miguelgrinberg/flasky).
         -e MAIL_USERNAME=<your-email-username> -e MAIL_PASSWORD=<your-email-password> \
         kevinbowen777/flask_chat:latest`
  - Open browser to http://127.0.0.1:8000
- 
+
 ---
-### Live Demo on Heroku: 
+### Live Demo on Heroku:
  - [https://flask-chat-blog.herokuapp.com/](https://flask-chat-blog.herokuapp.com/)
 ### Docker Container Image:
 
@@ -44,7 +44,7 @@ repository](https://github.com/miguelgrinberg/flasky).
 ---
 [![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/kevinbowen777/flask_chat/-/blob/master/LICENSE)
 ---
-### Reporting Bugs                                                              
-                                                                                 
+### Reporting Bugs
+
    Visit the [Issues page](https://github.com/kevinbowen777/flask_chat/issues)
       to view currently open bug reports or open a new issue.
