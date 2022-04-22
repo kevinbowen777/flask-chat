@@ -18,7 +18,8 @@ repository](https://github.com/miguelgrinberg/flasky).
  - `cd flask_chat`
  Local dev environment installation:
  - `mkvirtualenv flask_chat` or `workon flask_chat` (using virtualenv-wrapper)
- - `cp env .flaskenv` Fill out & uncomment environmental variables as appropriate
+ - `cp flaskenv .flaskenv` Fill out & uncomment environmental variables as appropriate
+ - `flask db upgrade`
  - `flask run`
  - Open browser to http://127.0.0.1:5000
  Local Docker installation:
