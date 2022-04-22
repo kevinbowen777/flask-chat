@@ -16,13 +16,13 @@ repository](https://github.com/miguelgrinberg/flasky).
 ### Installation
  - `git clone https://github.com/kevinbowen777/flask_chat.git`
  - `cd flask_chat`
- Local dev environment installation:
+#### Local dev environment installation:
  - `mkvirtualenv flask_chat` or `workon flask_chat` (using virtualenv-wrapper)
  - `cp flaskenv .flaskenv` Fill out & uncomment environmental variables as appropriate
  - `flask db upgrade`
  - `flask run`
  - Open browser to http://127.0.0.1:5000
- Local Docker installation:
+#### Local Docker installation:
  - `cp env .env` Fill out & uncomment environmental variables as appropriate
  - Run db server:
      - `docker run --name mysql -d -e MYSQL_RANDOM_ROOT_PASSWORD=yes \
