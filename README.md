@@ -43,9 +43,11 @@ repository](https://github.com/miguelgrinberg/flasky).
 
  - [https://hub.docker.com/repository/docker/kevinbowen777/flask_chat](https://hub.docker.com/repository/docker/kevinbowen777/flask_chat)
 ---
+Home Page
+![Flask Chat Homepage](https://github.com/kevinbowen777/flask_chat/blob/master/images/flask_chat_home.png?raw=true)
 
-![Flask Chat Homepage](https://github.com/kevinbowen777/flask_chat/blob/master/images/flask_chat_home_20220202.png?raw=true)
-
+Profile Page
+![Flask Chat Profile](https://github.com/kevinbowen777/flask_chat/blob/master/images/flask_chat_profile.png?raw=true)
 
 ---
 [![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/kevinbowen777/flask_chat/-/blob/master/LICENSE)
