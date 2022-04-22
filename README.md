@@ -11,6 +11,7 @@ repository](https://github.com/miguelgrinberg/flasky).
  - ability to follow specific users
  - filter posts by followed users
  - gravatar support for user icons
+ - application performance profiling support
  - basic API support for viewing/creating posts or comments
 
 ### Installation
@@ -20,7 +21,7 @@ repository](https://github.com/miguelgrinberg/flasky).
  - `mkvirtualenv flask_chat` or `workon flask_chat` (using virtualenv-wrapper)
  - `cp flaskenv .flaskenv` Fill out & uncomment environmental variables as appropriate
  - `flask deploy`
- - `flask run`
+ - `flask run` Optionally, run `flask profile` to enable performance profiling
  - Open browser to http://127.0.0.1:5000
 #### Local Docker installation:
  - `cp env .env` Fill out & uncomment environmental variables as appropriate
