@@ -5,8 +5,6 @@ exercises in Miguel Grinberg's excellent book [Flask Web
 Development](http://www.flaskbook.com/) and his [Flasky
 repository](https://github.com/miguelgrinberg/flasky).
 
-
----
 ## Features
  - email verification for account registration & password/email change
  - MarkDown support and preview for comments & posts
@@ -15,6 +13,24 @@ repository](https://github.com/miguelgrinberg/flasky).
  - gravatar support for user icons
  - basic API support for viewing/creating posts or comments
 
+### Installation
+ - `git clone https://github.com/kevinbowen777/flask_chat.git`
+ - `cd flask_chat`
+ - `mkvirtualenv flask_chat` or `workon flask_chat` (using virtualenv-wrapper)
+ - `cp env .env` Fill out & uncomment environmental variables as appropriate
+ - Run db server:
+     - `docker run --name mysql -d -e MYSQL_RANDOM_ROOT_PASSWORD=yes \
+        -e MYSQL_DATABASE=flask_chat -e MYSQL_USER=flask_chat \
+        -e MYSQL_PASSWORD=<database-password> \
+        mysql/mysql-server:5.7`
+ - Run Flask container:
+     - `docker run -d -p 8000:5000 --link mysql:dbserver \
+        -e DATABASE_URL=mysql+pymysql://flask_chat:<database-password>@dbserver/flask_chat \
+        -e MAIL_USERNAME=<your-email-username> -e MAIL_PASSWORD=<your-email-password> \
+        kevinbowen777/flask_chat:latest`
+ - Open browser to http://127.0.0.1:8000
+ 
+---
 ### Live Demo on Heroku: 
  - [https://flask-chat-blog.herokuapp.com/](https://flask-chat-blog.herokuapp.com/)
 ### Docker Container Image:
