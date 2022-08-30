@@ -1,4 +1,14 @@
-## Flask Chat - A Social Blogging Application
+## Flask Chat
+
+<div align="center">
+
+  [![Status](https://img.shields.io/badge/status-active-success.svg)]()
+  [![GitHub Issues](https://img.shields.io/github/issues/kevinbowen777/flask_chat.svg)](https://github.com/kevinbowen777/flask_chat/issues)
+  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+
+</div>
+
+- A Social Blogging Application
 
 Flask Chat is a demonstration of Flask functionality taken directly from the
 exercises in Miguel Grinberg's excellent book [Flask Web
