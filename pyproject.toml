@@ -23,7 +23,7 @@ extend_skip = ["*.md", "*.json"]
 line_length = 119
 
 [tool.poetry]
-name = "flask_chat"
+name = "flask-chat"
 version = "0.1.0"
 description = "A social blogging application demonstrating Flask functionality"
 authors = ["Kevin Bowen <kevin.bowen@gmail.com>"]
