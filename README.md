@@ -55,17 +55,19 @@ repository](https://github.com/miguelgrinberg/flasky).
  - Open browser to http://127.0.0.1:8000
 
 ---
-### Live Demo on Heroku:
- - [https://flask-chat-blog.herokuapp.com/](https://flask-chat-blog.herokuapp.com/)
+### Live Application Demo:
+
+TBD
+
 ### Docker Container Image:
 
  - [https://hub.docker.com/repository/docker/kevinbowen777/flask-chat](https://hub.docker.com/repository/docker/kevinbowen777/flask_chat)
 ---
 Home Page
-![Flask Chat Homepage](https://github.com/kevinbowen777/flask-chat/blob/master/images/flask-chat_home.png?raw=true)
+![Flask Chat Homepage](images/flask-chat_home.png?raw=true)
 
 Profile Page
-![Flask Chat Profile](https://github.com/kevinbowen777/flask-chat/blob/master/images/flask-chat_profile.png?raw=true)
+![Flask Chat Profile](images/flask-chat_profile.png?raw=true)
 
 ---
 [![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/kevinbowen777/flask-chat/-/blob/master/LICENSE)
