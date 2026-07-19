@@ -9,3 +9,7 @@ Pygments==2.11.2
 requests==2.27.1
 selenium==3.141.0
 urllib3==1.26.8
+pre-commit==2.18.1
+black==22.3.0
+flake8==4.0.1
+isort==5.10.1
